@@ -20,6 +20,7 @@ public final class PunishPlugin extends JavaPlugin {
     private ConfigManager configManager;
     private DatabaseManager databaseManager;
     private PunishmentManager punishmentManager;
+    private com.chaeulso.punish.punishment.TemplateManager templateManager;
     private GUIManager guiManager;
     private AuthScheduler authScheduler;
 
@@ -44,6 +45,7 @@ public final class PunishPlugin extends JavaPlugin {
         // 4. Initialize Punishment Logic Controller
         this.punishmentManager = new PunishmentManager(this);
         this.punishmentManager.startExpirationTask();
+        this.templateManager = new com.chaeulso.punish.punishment.TemplateManager(this);
 
         // 5. Initialize GUI Manager
         this.guiManager = new GUIManager(this);
@@ -116,6 +118,10 @@ public final class PunishPlugin extends JavaPlugin {
 
     public GUIManager getGuiManager() {
         return guiManager;
+    }
+
+    public com.chaeulso.punish.punishment.TemplateManager getTemplateManager() {
+        return templateManager;
     }
 
     public AuthScheduler getAuthScheduler() {

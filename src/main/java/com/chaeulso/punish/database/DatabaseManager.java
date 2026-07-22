@@ -205,6 +205,25 @@ public class DatabaseManager {
         }, task -> plugin.getAuthScheduler().runTaskAsynchronously(task));
     }
 
+    public CompletableFuture<List<Punishment>> getPunishmentHistoryByStaff(@NotNull String staffName) {
+        return CompletableFuture.supplyAsync(() -> {
+            List<Punishment> list = new ArrayList<>();
+            String sql = "SELECT * FROM punishments WHERE staff_name = ?;";
+            try (Connection conn = dataSource.getConnection();
+                 PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setString(1, staffName);
+                try (ResultSet rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        list.add(mapPunishment(rs));
+                    }
+                }
+            } catch (SQLException e) {
+                plugin.getLogger().log(Level.SEVERE, "Failed to fetch punishments by staff", e);
+            }
+            return list;
+        }, task -> plugin.getAuthScheduler().runTaskAsynchronously(task));
+    }
+
     public CompletableFuture<List<Punishment>> getAllActivePunishments() {
         return CompletableFuture.supplyAsync(() -> {
             List<Punishment> list = new ArrayList<>();

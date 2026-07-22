@@ -463,7 +463,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     private void handlePunishCommand(CommandSender sender, String[] args) {
         if (args.length < 1) {
-            sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize("&cUsage: /punish <player> [reload]"));
+            sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize("&cUsage: /punish <player> [reload/rollback]"));
             return;
         }
 
@@ -474,8 +474,49 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 return;
             }
             plugin.getConfigManager().reload();
+            plugin.getTemplateManager().reload();
             plugin.getPunishmentManager().clearCache();
             sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize("&a&l✔ &aAll configuration files successfully reloaded!"));
+            return;
+        }
+
+        if ("rollback".equalsIgnoreCase(args[0])) {
+            String rollbackPerm = plugin.getConfigManager().getPermissions().getString("permissions.rollback", "punish.admin");
+            if (!sender.hasPermission(rollbackPerm)) {
+                sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(formatMsg("no-permission", "&cNo permission!")));
+                return;
+            }
+            if (args.length < 2) {
+                sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize("&cUsage: /punish rollback <staff_name> [reason]"));
+                return;
+            }
+            String staff = args[1];
+            String reason = args.length > 2 ? args[2] : "Staff punishments rolled back by admin.";
+
+            sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize("&8[&cPunish&8] &aRolling back all punishments issued by &e" + staff + "&a..."));
+            
+            plugin.getDatabaseManager().getPunishmentHistoryByStaff(staff).thenAccept(list -> {
+                if (list.isEmpty()) {
+                    sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize("&c&l✘ &cNo punishments found issued by staff: &e" + staff));
+                    return;
+                }
+                int count = 0;
+                for (Punishment p : list) {
+                    if (p.isActive()) {
+                        p.setActive(false);
+                        p.setRemoved(true);
+                        p.setRemovedBy(sender.getName());
+                        p.setRemovedReason(reason);
+                        p.setRemovedDate(System.currentTimeMillis());
+                        plugin.getDatabaseManager().updatePunishment(p);
+                        
+                        plugin.getPunishmentManager().unloadCache(p.getUuid());
+                        count++;
+                    }
+                }
+                sender.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(
+                        "&a&l✔ &aSuccessfully rolled back &e" + count + " &aactive punishments issued by &e" + staff + "&a!"));
+            });
             return;
         }
 
@@ -611,6 +652,12 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 if (p.getName().toLowerCase().startsWith(args[0].toLowerCase())) {
                     completions.add(p.getName());
                 }
+            }
+            if ("reload".startsWith(args[0].toLowerCase())) {
+                completions.add("reload");
+            }
+            if ("rollback".startsWith(args[0].toLowerCase())) {
+                completions.add("rollback");
             }
         } else if (args.length == 2 && List.of("ban", "kick", "mute", "freeze", "jail", "warn").contains(name)) {
             // Autocomplete preset reasons

@@ -1,0 +1,5 @@
+name: Punish
+version: 26.0.1
+main: com.chaeulso.punish.bungee.BungeePunish
+author: Chaeulso
+description: Modern, highly optimized, and customizable moderation & punishment plugin.

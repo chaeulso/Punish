@@ -1,0 +1,29 @@
+# ==============================================================================
+#                 Punish Custom Punishment Scaling Templates (Ladders)
+# ==============================================================================
+
+templates:
+  cheating:
+    type: "ban"
+    reason: "Cheating / Hack Client"
+    # Durations scale up with repeat offences
+    ladder:
+      - "7d"
+      - "14d"
+      - "30d"
+      - "permanent"
+  toxic:
+    type: "mute"
+    reason: "Toxic Behavior / Insults"
+    ladder:
+      - "1h"
+      - "12h"
+      - "1d"
+      - "7d"
+  spam:
+    type: "mute"
+    reason: "Spamming Global Chat"
+    ladder:
+      - "10m"
+      - "1h"
+      - "1d"

@@ -1,6 +1,9 @@
 com/chaeulso/punish/config/ConfigManager.class
+velocity-plugin.json
+com/chaeulso/punish/velocity/VelocityPunish.class
 com/chaeulso/punish/gui/GUIManager$PunishHolder.class
 com/chaeulso/punish/punishment/PunishmentManager.class
+com/chaeulso/punish/bungee/BungeePunish.class
 com/chaeulso/punish/PunishPlugin.class
 com/chaeulso/punish/model/Punishment.class
 com/chaeulso/punish/util/AuthScheduler.class
@@ -10,3 +13,4 @@ com/chaeulso/punish/gui/GUIManager.class
 com/chaeulso/punish/database/DatabaseManager.class
 com/chaeulso/punish/model/Punishment$Type.class
 com/chaeulso/punish/commands/CommandManager.class
+com/chaeulso/punish/punishment/TemplateManager.class
