@@ -1,5 +1,6 @@
 package com.chaeulso.punish.bungee;
 
+import com.chaeulso.punish.util.ProxyConfigLoader;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.ProxyServer;
 
@@ -9,8 +10,11 @@ import net.md_5.bungee.api.ProxyServer;
 public class BungeePunish extends Plugin {
     @Override
     public void onEnable() {
+        // Automatically save all resource files on BungeeCord data folder
+        ProxyConfigLoader.saveResources(getDataFolder());
+
         ProxyServer.getInstance().getConsole().sendMessage(new net.md_5.bungee.api.chat.TextComponent(
-                "§c§lPunish §8» §aBungeeCord Proxy Module loaded successfully!"
+                "§c§lPunish §8» §aBungeeCord Proxy Module loaded successfully! Configs generated."
         ));
     }
 
