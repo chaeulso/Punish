@@ -1,0 +1,16 @@
+# ==============================================================================
+#                 Punish Custom Preset Reasons Configuration
+# ==============================================================================
+
+reasons:
+  ban:
+    cheating: "Cheating & Hack Client"
+    xray: "Using X-Ray / Ore Hack"
+    advertising: "Advertising External Links"
+  mute:
+    toxic: "Toxic / Inappropriate Language"
+    spam: "Spamming Global Chat"
+  kick:
+    griefing: "Block Griefing"
+  warn:
+    trolling: "Trolling Players"

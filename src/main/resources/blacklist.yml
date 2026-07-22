@@ -1,0 +1,24 @@
+# ==============================================================================
+#                 Punish Blocked Commands Configuration (Blacklist)
+# ==============================================================================
+
+# Commands blocked when players are muted, frozen, or jailed
+blocked-commands:
+  mute:
+    - "msg"
+    - "tell"
+    - "w"
+    - "r"
+    - "me"
+  freeze:
+    - "spawn"
+    - "home"
+    - "warp"
+    - "tp"
+    - "tpa"
+  jail:
+    - "spawn"
+    - "home"
+    - "warp"
+    - "tp"
+    - "tpa"

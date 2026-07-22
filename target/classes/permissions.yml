@@ -1,0 +1,35 @@
+# ==============================================================================
+#                 Punish Permissions Node Directory Configuration
+# ==============================================================================
+
+permissions:
+  admin: "punish.admin"
+  reload: "punish.reload"
+  gui: "punish.gui"
+  check: "punish.check"
+  history: "punish.history"
+  staffnotify: "punish.staffnotify"
+  setjail: "punish.setjail"
+  
+  # Standard Punishments commands permission nodes
+  ban: "punish.ban"
+  unban: "punish.unban"
+  kick: "punish.kick"
+  mute: "punish.mute"
+  unmute: "punish.unmute"
+  freeze: "punish.freeze"
+  unfreeze: "punish.unfreeze"
+  jail: "punish.jail"
+  unjail: "punish.unjail"
+  warn: "punish.warn"
+  clearwarn: "punish.clearwarn"
+  delwarn: "punish.delwarn"
+  
+  # Staff bypass nodes (prevent lower staff from punishing higher staff)
+  bypass:
+    ban: "punish.bypass.ban"
+    kick: "punish.bypass.kick"
+    mute: "punish.bypass.mute"
+    freeze: "punish.bypass.freeze"
+    jail: "punish.bypass.jail"
+    warn: "punish.bypass.warn"

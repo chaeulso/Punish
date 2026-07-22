@@ -1,0 +1,45 @@
+# ==============================================================================
+# Punish - Premium Minecraft Moderation | Author: Chaeulso
+# ==============================================================================
+
+# Choose default language for messages: en (English), id (Indonesian), cn (Chinese), es (Spanish), ru (Russian)
+# This will load messages_<language>.yml from the plugin folder.
+language: "en"
+
+timezone: "Asia/Jakarta"
+date-format: "dd/MM/yyyy HH:mm:ss"
+
+# Interval in seconds to automatically save cache data back to the database
+save-interval: 60
+
+# Check for updates from GitHub on startup
+check-update: true
+
+# Enable anonymous metrics via bStats
+metrics: true
+
+# Enable particles and sound effects globally
+effects:
+  sounds: true
+  particles: true
+
+# Post-Authentication Teleport Action
+# Options: LAST_LOCATION (teleport back to last place), SPAWN (lobby spawn)
+teleport-after-auth: "LAST_LOCATION"
+
+# Limit self punishment for administrators
+anti-abuse:
+  allow-self-ban: false
+  allow-self-kick: false
+  allow-self-freeze: false
+  allow-self-jail: false
+  protect-admin: true
+  protect-owner: true
+
+# VPN / Proxy detection settings (Toggleable)
+anti-vpn:
+  enabled: false
+  kick-vpn: true
+  kick-proxy: true
+  kick-hosting: true
+  kick-message: "&c&l✘ &cConnection rejected! VPN/Proxy connections are not allowed on this server."

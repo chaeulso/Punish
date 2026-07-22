@@ -1,0 +1,95 @@
+# ==============================================================================
+#                 Punish Messages - Russian (RU)
+# ==============================================================================
+
+prefix: "&8[&cPunish&8]"
+
+no-permission: "%prefix% &cУ вас нет прав для выполнения этой команды."
+player-not-found: "%prefix% &cИгрок &e%player% &cне найден или никогда не заходил."
+invalid-duration: "%prefix% &cУказан неверный формат времени (например: 1d, 5h, perm)."
+self-punish-error: "%prefix% &cВы не можете наказать самого себя!"
+staff-exempt-error: "%prefix% &cВы не можете наказать &e%player% &cтак как у него ранг выше."
+only-player-error: "%prefix% &cЭто действие может выполнить только игрок в игре."
+unknown-error: "%prefix% &cПроизошла непредвиденная внутренняя ошибка."
+
+commands:
+  ban:
+    usage: "%prefix% &cИспользование: /ban <игрок> <причина> <время>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно заблокирован за: &f%reason% &a(&e%duration%&a)"
+  unban:
+    usage: "%prefix% &cИспользование: /unban <игрок>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно разблокирован."
+    not-banned: "%prefix% &cИгрок &e%player% &cне заблокирован в данный момент!"
+  kick:
+    usage: "%prefix% &cИспользование: /kick <игрок> <причина>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно кикнут за: &f%reason%&a"
+  mute:
+    usage: "%prefix% &cИспользование: /mute <игрок> <причина> <время>"
+    success: "%prefix% &aИгроку &e%player% &aуспешно заблокирован чат за: &f%reason% &a(&e%duration%&a)"
+    chat-blocked: "&c&l✘ &cВаш чат заблокирован на этом сервере!\n&fПричина: &e%reason%\n&fОсталось: &e%remaining%"
+  unmute:
+    usage: "%prefix% &cИспользование: /unmute <игрок>"
+    success: "%prefix% &aС игрока &e%player% &aуспешно снята блокировка чата."
+    not-muted: "%prefix% &cУ игрока &e%player% &cне заблокирован чат!"
+  freeze:
+    usage: "%prefix% &cИспользование: /freeze <игрок> <причина> <время>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно заморожен за: &f%reason% &a(&e%duration%&a)"
+    action-blocked: "&c&l✘ &cВы не можете делать это в замороженном состоянии!"
+  unfreeze:
+    usage: "%prefix% &cИспользование: /unfreeze <игрок>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно разморожен."
+    not-frozen: "%prefix% &cИгрок &e%player% &cне заморожен!"
+  jail:
+    usage: "%prefix% &cИспользование: /jail <игрок> <причина> <время>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно посажен в тюрьму за: &f%reason% &a(&e%duration%&a)"
+    spawn-not-set: "%prefix% &cТочка спавна тюрьмы не настроена! Используйте /setjail."
+  unjail:
+    usage: "%prefix% &cИспользование: /unjail <игрок>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно освобожден из тюрьмы."
+    not-jailed: "%prefix% &cИгрок &e%player% &cне находится в тюрьме!"
+  warn:
+    usage: "%prefix% &cИспользование: /warn <игрок> <причина>"
+    success: "%prefix% &aИгрок &e%player% &aуспешно предупрежден за: &f%reason%&a"
+  clearwarn:
+    usage: "%prefix% &cИспользование: /clearwarn <игрок>"
+    success: "%prefix% &aВсе предупреждения игрока &e%player% &aуспешно очищены."
+  delwarn:
+    usage: "%prefix% &cИспользование: /delwarn <игрок> <id>"
+    success: "%prefix% &aПредупреждение &e%warn_id% &aигрока &e%player% &aуспешно удалено."
+    not-found: "%prefix% &cПредупреждение с ID &e%warn_id% &cдля игрока &e%player% &cне найдено."
+
+notifications:
+  staff-notify:
+    enabled: true
+    message:
+      - "&8[&cPunish Staff&8] &c%staff% &fприменил &6%type% &fк &e%player% &fза: &d%reason%"
+  warn:
+    - "&6&l=========================================="
+    - "             &6&l⚠ ВЫ ПОЛУЧИЛИ ПРЕДУПРЕЖДЕНИЕ ⚠"
+    - "&6&l=========================================="
+    - "&fПричина : &e%reason%"
+    - "&fID предупреждения : &e%warn_id%"
+    - "&fВыдал : &e%staff%"
+    - "&6&l=========================================="
+  mute:
+    - "&c&l=========================================="
+    - "             &c&lВАШ ЧАТ ЗАБЛОКИРОВАН"
+    - "&c&l=========================================="
+    - "&fПричина : &e%reason%"
+    - "&fДлительность : &e%duration%"
+    - "&fОсталось : &e%remaining%"
+    - "&c&l=========================================="
+  freeze:
+    - "&b&l=========================================="
+    - "             &b&l❄ ВЫ ЗАМОРОЖЕНЫ ❄"
+    - "&b&l=========================================="
+    - "&fПричина : &e%reason%"
+    - "&b&lНЕ ВЫХОДИТЕ ИЗ ИГРЫ, ИНАЧЕ БУДЕТЕ ЗАБАНЕНЫ!"
+    - "&b&l=========================================="
+  jail:
+    - "&e&l=========================================="
+    - "             &e&l🏛 ВЫ ПОСАЖЕНЫ В ТЮРЬМУ 🏛"
+    - "&e&l=========================================="
+    - "&fПричина : &e%reason%"
+    - "&fОсталось : &e%remaining%"
+    - "&e&l=========================================="

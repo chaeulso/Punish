@@ -1,0 +1,56 @@
+# ==============================================================================
+#                 Punish Custom chest GUI Configuration
+# ==============================================================================
+
+main-gui:
+  title: "&4&lPunish Moderation Dashboard"
+  rows: 3
+  items:
+    ban:
+      material: "RED_WOOL"
+      slot: 10
+      display-name: "&c&lBAN PLAYER"
+      lore:
+        - "&7Click to ban player from the server."
+        - "&eAction: Opens duration & reasons picker."
+    kick:
+      material: "ORANGE_WOOL"
+      slot: 11
+      display-name: "&6&lKICK PLAYER"
+      lore:
+        - "&7Click to kick player from the server."
+        - "&eAction: Opens reason editor."
+    mute:
+      material: "YELLOW_WOOL"
+      slot: 12
+      display-name: "&e&lMUTE PLAYER"
+      lore:
+        - "&7Click to mute player's chat and commands."
+        - "&eAction: Opens duration picker."
+    freeze:
+      material: "LIGHT_BLUE_WOOL"
+      slot: 13
+      display-name: "&b&lFREEZE PLAYER"
+      lore:
+        - "&7Click to freeze player in place."
+        - "&eAction: Freezes movement immediately."
+    jail:
+      material: "GRAY_WOOL"
+      slot: 14
+      display-name: "&8&lJAIL PLAYER"
+      lore:
+        - "&7Click to send player to jail."
+        - "&eAction: Teleports player to jail spawn."
+    warn:
+      material: "WHITE_WOOL"
+      slot: 15
+      display-name: "&f&lWARN PLAYER"
+      lore:
+        - "&7Click to warn player."
+        - "&eAction: Adds warning entry."
+    close:
+      material: "BARRIER"
+      slot: 22
+      display-name: "&c&lCLOSE GUI"
+      lore:
+        - "&7Click to close this window."

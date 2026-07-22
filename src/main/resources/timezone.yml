@@ -1,0 +1,12 @@
+# ==============================================================================
+#                 Punish Available Timezones Configuration
+# ==============================================================================
+
+default: "Asia/Jakarta"
+
+available:
+  - "UTC"
+  - "Asia/Jakarta"
+  - "Asia/Tokyo"
+  - "Europe/London"
+  - "America/New_York"

@@ -1,0 +1,20 @@
+# ==============================================================================
+#                 Punish Database Connection Pool Configuration
+# ==============================================================================
+
+# Choose: SQLite or MySQL or MariaDB
+type: "SQLite"
+
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "punish"
+  username: "root"
+  password: ""
+  ssl: false
+  pool-settings:
+    maximum-pool-size: 10
+    minimum-idle: 2
+    connection-timeout: 30000
+    idle-timeout: 600000
+    max-lifetime: 1800000

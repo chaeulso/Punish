@@ -1,0 +1,95 @@
+# ==============================================================================
+#                 Punish Messages - Spanish (ES)
+# ==============================================================================
+
+prefix: "&8[&cPunish&8]"
+
+no-permission: "%prefix% &cNo tienes permiso para ejecutar este comando."
+player-not-found: "%prefix% &cEl jugador &e%player% &cno fue encontrado o nunca se ha unido."
+invalid-duration: "%prefix% &cFormato de duración no válido (por ejemplo, 1d, 5h, perm)."
+self-punish-error: "%prefix% &c¡No puedes castigarte a ti mismo!"
+staff-exempt-error: "%prefix% &cNo puedes castigar a &e%player% &cporque tiene un rango superior."
+only-player-error: "%prefix% &cEsta acción solo la puede realizar un jugador en el juego."
+unknown-error: "%prefix% &cOcurrió un error interno inesperado."
+
+commands:
+  ban:
+    usage: "%prefix% &cUso: /ban <jugador> <motivo> <duración>"
+    success: "%prefix% &aJugador &e%player% &abaneado con éxito por: &f%reason% &a(&e%duration%&a)"
+  unban:
+    usage: "%prefix% &cUso: /unban <jugador>"
+    success: "%prefix% &aJugador &e%player% &adesbaneado con éxito."
+    not-banned: "%prefix% &c¡El jugador &e%player% &cno está baneado actualmente!"
+  kick:
+    usage: "%prefix% &cUso: /kick <jugador> <motivo>"
+    success: "%prefix% &aJugador &e%player% &aexpulsado con éxito por: &f%reason%&a"
+  mute:
+    usage: "%prefix% &cUso: /mute <jugador> <motivo> <duración>"
+    success: "%prefix% &aJugador &e%player% &amuteado con éxito por: &f%reason% &a(&e%duration%&a)"
+    chat-blocked: "&c&l✘ &c¡Actualmente estás silenciado en este servidor!\n&fMotivo: &e%reason%\n&fRestante: &e%remaining%"
+  unmute:
+    usage: "%prefix% &cUso: /unmute <jugador>"
+    success: "%prefix% &aJugador &e%player% &adesmuteado con éxito."
+    not-muted: "%prefix% &c¡El jugador &e%player% &cno está silenciado actualmente!"
+  freeze:
+    usage: "%prefix% &cUso: /freeze <jugador> <motivo> <duración>"
+    success: "%prefix% &aJugador &e%player% &acongelado con éxito por: &f%reason% &a(&e%duration%&a)"
+    action-blocked: "&c&l✘ &c¡No puedes hacer esto mientras estás congelado!"
+  unfreeze:
+    usage: "%prefix% &cUso: /unfreeze <jugador>"
+    success: "%prefix% &aJugador &e%player% &adescongelado con éxito."
+    not-frozen: "%prefix% &c¡El jugador &e%player% &cno está congelado actualmente!"
+  jail:
+    usage: "%prefix% &cUso: /jail <jugador> <motivo> <duración>"
+    success: "%prefix% &aJugador &e%player% &aencarcelado con éxito por: &f%reason% &a(&e%duration%&a)"
+    spawn-not-set: "%prefix% &c¡La ubicación de la cárcel no está configurada! Usa /setjail."
+  unjail:
+    usage: "%prefix% &cUso: /unjail <jugador>"
+    success: "%prefix% &aJugador &e%player% &aliberado de la cárcel con éxito."
+    not-jailed: "%prefix% &c¡El jugador &e%player% &cno está encarcelado actualmente!"
+  warn:
+    usage: "%prefix% &cUso: /warn <jugador> <motivo>"
+    success: "%prefix% &aJugador &e%player% &aadvertido con éxito por: &f%reason%&a"
+  clearwarn:
+    usage: "%prefix% &cUso: /clearwarn <jugador>"
+    success: "%prefix% &aSe borraron con éxito todas las advertencias del jugador &e%player%&a."
+  delwarn:
+    usage: "%prefix% &cUso: /delwarn <jugador> <id-advertencia>"
+    success: "%prefix% &aSe eliminó con éxito la advertencia &e%warn_id% &apara el jugador &e%player%&a."
+    not-found: "%prefix% &cNo se encontró la ID de advertencia &e%warn_id% &apara el jugador &e%player%&a."
+
+notifications:
+  staff-notify:
+    enabled: true
+    message:
+      - "&8[&cPunish Staff&8] &c%staff% &fejecutó &6%type% &fa &e%player% &fpor: &d%reason%"
+  warn:
+    - "&6&l=========================================="
+    - "             &6&l⚠ ADVERTENCIA RECIBIDA ⚠"
+    - "&6&l=========================================="
+    - "&fMotivo : &e%reason%"
+    - "&fID de Advertencia : &e%warn_id%"
+    - "&fEmitido por : &e%staff%"
+    - "&6&l=========================================="
+  mute:
+    - "&c&l=========================================="
+    - "             &c&lESTÁS SILENCIADO"
+    - "&c&l=========================================="
+    - "&fMotivo : &e%reason%"
+    - "&fDuración : &e%duration%"
+    - "&fRestante : &e%remaining%"
+    - "&c&l=========================================="
+  freeze:
+    - "&b&l=========================================="
+    - "             &b&l❄ ESTÁS CONGELADO ❄"
+    - "&b&l=========================================="
+    - "&fMotivo : &e%reason%"
+    - "&b&l¡NO TE DESCONECTES O SERÁS BANEADO!"
+    - "&b&l=========================================="
+  jail:
+    - "&e&l=========================================="
+    - "             &e&l🏛 ESTÁS ENCARCELADO 🏛"
+    - "&e&l=========================================="
+    - "&fMotivo : &e%reason%"
+    - "&fRestante : &e%remaining%"
+    - "&e&l=========================================="

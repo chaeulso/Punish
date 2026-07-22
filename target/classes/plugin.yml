@@ -1,0 +1,60 @@
+name: Punish
+version: 26.0.1
+main: com.chaeulso.punish.PunishPlugin
+api-version: '1.21'
+author: Chaeulso
+description: Modern, highly optimized, and customizable moderation & punishment plugin.
+softdepend:
+  - PlaceholderAPI
+  - LuckPerms
+  - DiscordSRV
+
+commands:
+  ban:
+    description: Ban a player from the server.
+    usage: /ban <player> <reason> <duration>
+  kick:
+    description: Kick a player from the server.
+    usage: /kick <player> <reason>
+  mute:
+    description: Mute a player from chat and commands.
+    usage: /mute <player> <reason> <duration>
+  freeze:
+    description: Freeze a player in place.
+    usage: /freeze <player> <reason> <duration>
+  jail:
+    description: Send a player to jail.
+    usage: /jail <player> <reason> <duration>
+  warn:
+    description: Warn a player.
+    usage: /warn <player> <reason>
+  unban:
+    description: Unban a player.
+    usage: /unban <player>
+  unmute:
+    description: Unmute a player.
+    usage: /unmute <player>
+  unfreeze:
+    description: Unfreeze a player.
+    usage: /unfreeze <player>
+  unjail:
+    description: Unjail a player.
+    usage: /unjail <player>
+  clearwarn:
+    description: Clear all warns of a player.
+    usage: /clearwarn <player>
+  delwarn:
+    description: Delete a specific warn ID from a player.
+    usage: /delwarn <player> <warn-id>
+  check:
+    description: Check a player's active punishments.
+    usage: /check <player>
+  history:
+    description: View a player's punishment history.
+    usage: /history <player> [type]
+  punish:
+    description: Open the moderation GUI or execute admin actions.
+    usage: /punish <player>
+  setjail:
+    description: Set the jail spawn location.
+    usage: /setjail

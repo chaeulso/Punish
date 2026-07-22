@@ -1,0 +1,95 @@
+# ==============================================================================
+#                 Punish Messages - Chinese (CN)
+# ==============================================================================
+
+prefix: "&8[&cPunish&8]"
+
+no-permission: "%prefix% &c您没有权限执行此命令。"
+player-not-found: "%prefix% &c玩家 &e%player% &c未找到或从未加入过服务器。"
+invalid-duration: "%prefix% &c指定的持续时间格式无效（例如：1d、5h、perm）。"
+self-punish-error: "%prefix% &c您不能对自己执行此惩罚！"
+staff-exempt-error: "%prefix% &c您无法惩罚玩家 &e%player% &c因为其拥有更高权限。"
+only-player-error: "%prefix% &c此操作只能由游戏内的玩家执行。"
+unknown-error: "%prefix% &c发生未知的内部错误。"
+
+commands:
+  ban:
+    usage: "%prefix% &c使用方法: /ban <玩家> <原因> <时间>"
+    success: "%prefix% &a成功封禁玩家 &e%player% &a原因: &f%reason% &a(&e%duration%&a)"
+  unban:
+    usage: "%prefix% &c使用方法: /unban <玩家>"
+    success: "%prefix% &a成功解封玩家 &e%player%&a。"
+    not-banned: "%prefix% &c玩家 &e%player% &c当前未被封禁！"
+  kick:
+    usage: "%prefix% &c使用方法: /kick <玩家> <原因>"
+    success: "%prefix% &a成功将玩家 &e%player% &a踢出，原因: &f%reason%&a"
+  mute:
+    usage: "%prefix% &c使用方法: /mute <玩家> <原因> <时间>"
+    success: "%prefix% &a成功禁言玩家 &e%player% &a原因: &f%reason% &a(&e%duration%&a)"
+    chat-blocked: "&c&l✘ &c您目前已被禁言！\n&f原因: &e%reason%\n&f剩余时间: &e%remaining%"
+  unmute:
+    usage: "%prefix% &c使用方法: /unmute <玩家>"
+    success: "%prefix% &a成功解除玩家 &e%player% &a的禁言。"
+    not-muted: "%prefix% &c玩家 &e%player% &c当前未被禁言！"
+  freeze:
+    usage: "%prefix% &c使用方法: /freeze <玩家> <原因> <时间>"
+    success: "%prefix% &a成功冻结玩家 &e%player% &a原因: &f%reason% &a(&e%duration%&a)"
+    action-blocked: "&c&l✘ &c您在被冻结时无法执行此操作！"
+  unfreeze:
+    usage: "%prefix% &c使用方法: /unfreeze <玩家>"
+    success: "%prefix% &a成功解冻玩家 &e%player%&a。"
+    not-frozen: "%prefix% &c玩家 &e%player% &c当前未被冻结！"
+  jail:
+    usage: "%prefix% &c使用方法: /jail <玩家> <原因> <时间>"
+    success: "%prefix% &a成功将玩家 &e%player% &a关入监狱，原因: &f%reason% &a(&e%duration%&a)"
+    spawn-not-set: "%prefix% &c监狱地点未配置！请使用 /setjail。"
+  unjail:
+    usage: "%prefix% &c使用方法: /unjail <玩家>"
+    success: "%prefix% &a成功将玩家 &e%player% &a释放。"
+    not-jailed: "%prefix% &c玩家 &e%player% &c当前未被关入监狱！"
+  warn:
+    usage: "%prefix% &c使用方法: /warn <玩家> <原因>"
+    success: "%prefix% &a成功警告玩家 &e%player% &a原因: &f%reason%&a"
+  clearwarn:
+    usage: "%prefix% &c使用方法: /clearwarn <玩家>"
+    success: "%prefix% &a成功清除玩家 &e%player% &a的所有警告。"
+  delwarn:
+    usage: "%prefix% &c使用方法: /delwarn <玩家> <警告ID>"
+    success: "%prefix% &a成功删除玩家 &e%player% &a的警告 &e%warn_id%&a。"
+    not-found: "%prefix% &c未找到该玩家的警告ID &e%warn_id%&a。"
+
+notifications:
+  staff-notify:
+    enabled: true
+    message:
+      - "&8[&cPunish Staff&8] &c%staff% &f对 &e%player% &f执行了 &6%type% &f原因: &d%reason%"
+  warn:
+    - "&6&l=========================================="
+    - "             &6&l⚠ 您收到了一个警告 ⚠"
+    - "&6&l=========================================="
+    - "&f原因 : &e%reason%"
+    - "&f警告 ID : &e%warn_id%"
+    - "&f执行者 : &e%staff%"
+    - "&6&l=========================================="
+  mute:
+    - "&c&l=========================================="
+    - "             &c&l您已被禁言"
+    - "&c&l=========================================="
+    - "&f原因 : &e%reason%"
+    - "&f持续时间 : &e%duration%"
+    - "&f剩余时间 : &e%remaining%"
+    - "&c&l=========================================="
+  freeze:
+    - "&b&l=========================================="
+    - "             &b&l❄ 您已被冻结 ❄"
+    - "&b&l=========================================="
+    - "&f原因 : &e%reason%"
+    - "&b&l请勿下线，否则您将被封禁！"
+    - "&b&l=========================================="
+  jail:
+    - "&e&l=========================================="
+    - "             &e&l🏛 您已被关入监狱 🏛"
+    - "&e&l=========================================="
+    - "&f原因 : &e%reason%"
+    - "&f剩余时间 : &e%remaining%"
+    - "&e&l=========================================="

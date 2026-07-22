@@ -1,0 +1,11 @@
+# ==============================================================================
+#                 Punish Discord Webhook Integration Configuration
+# ==============================================================================
+
+webhook:
+  enabled: false
+  url: "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL_HERE"
+  username: "Punish Moderation Logs"
+  avatar-url: ""
+  color: "#FF0000"
+  footer-text: "AuthPlus Punish Moderation | v26.0.1"

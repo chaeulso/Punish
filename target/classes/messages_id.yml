@@ -1,0 +1,95 @@
+# ==============================================================================
+#                 Punish Messages - Indonesian (ID)
+# ==============================================================================
+
+prefix: "&8[&cPunish&8]"
+
+no-permission: "%prefix% &cAnda tidak memiliki izin untuk menjalankan perintah ini."
+player-not-found: "%prefix% &cPlayer &e%player% &ctidak ditemukan atau belum pernah bergabung."
+invalid-duration: "%prefix% &cFormat durasi tidak valid (contoh: 1d, 5h, perm)."
+self-punish-error: "%prefix% &cAnda tidak dapat menghukum diri Anda sendiri!"
+staff-exempt-error: "%prefix% &cAnda tidak dapat menghukum &e%player% &ckarena mereka memiliki pangkat lebih tinggi."
+only-player-error: "%prefix% &cTindakan ini hanya dapat dijalankan oleh pemain di dalam game."
+unknown-error: "%prefix% &cTerjadi kesalahan internal yang tidak terduga."
+
+commands:
+  ban:
+    usage: "%prefix% &cPenggunaan: /ban <player> <alasan> <durasi>"
+    success: "%prefix% &aBerhasil memblokir &e%player% &akarena: &f%reason% &a(&e%duration%&a)"
+  unban:
+    usage: "%prefix% &cPenggunaan: /unban <player>"
+    success: "%prefix% &aBerhasil membuka blokir &e%player%&a."
+    not-banned: "%prefix% &cPlayer &e%player% &ctidak sedang diblokir!"
+  kick:
+    usage: "%prefix% &cPenggunaan: /kick <player> <alasan>"
+    success: "%prefix% &aBerhasil mengeluarkan &e%player% &akarena: &f%reason%&a"
+  mute:
+    usage: "%prefix% &cPenggunaan: /mute <player> <alasan> <durasi>"
+    success: "%prefix% &aBerhasil membungkam &e%player% &akarena: &f%reason% &a(&e%duration%&a)"
+    chat-blocked: "&c&l✘ &cAnda sedang dibungkam di server ini!\n&fAlasan: &e%reason%\n&fSisa Waktu: &e%remaining%"
+  unmute:
+    usage: "%prefix% &cPenggunaan: /unmute <player>"
+    success: "%prefix% &aBerhasil membuka bungkam &e%player%&a."
+    not-muted: "%prefix% &cPlayer &e%player% &ctidak sedang dibungkam!"
+  freeze:
+    usage: "%prefix% &cPenggunaan: /freeze <player> <alasan> <durasi>"
+    success: "%prefix% &aBerhasil membekukan &e%player% &akarena: &f%reason% &a(&e%duration%&a)"
+    action-blocked: "&c&l✘ &cAnda tidak dapat melakukan tindakan ini saat sedang dibekukan!"
+  unfreeze:
+    usage: "%prefix% &cPenggunaan: /unfreeze <player>"
+    success: "%prefix% &aBerhasil mencairkan &e%player%&a."
+    not-frozen: "%prefix% &cPlayer &e%player% &ctidak sedang dibekukan!"
+  jail:
+    usage: "%prefix% &cPenggunaan: /jail <player> <alasan> <durasi>"
+    success: "%prefix% &aBerhasil menjebloskan &e%player% &ake penjara karena: &f%reason% &a(&e%duration%&a)"
+    spawn-not-set: "%prefix% &cTitik spawn penjara belum dikonfigurasi! Gunakan /setjail."
+  unjail:
+    usage: "%prefix% &cPenggunaan: /unjail <player>"
+    success: "%prefix% &aBerhasil mengeluarkan &e%player% &adari penjara&a."
+    not-jailed: "%prefix% &cPlayer &e%player% &ctidak sedang berada di penjara!"
+  warn:
+    usage: "%prefix% &cPenggunaan: /warn <player> <alasan>"
+    success: "%prefix% &aBerhasil memperingatkan &e%player% &akarena: &f%reason%&a"
+  clearwarn:
+    usage: "%prefix% &cPenggunaan: /clearwarn <player>"
+    success: "%prefix% &aBerhasil menghapus seluruh peringatan untuk player &e%player%&a."
+  delwarn:
+    usage: "%prefix% &cPenggunaan: /delwarn <player> <warn-id>"
+    success: "%prefix% &aBerhasil menghapus peringatan &e%warn_id% &auntuk player &e%player%&a."
+    not-found: "%prefix% &cPeringatan ID &e%warn_id% &ctidak ditemukan untuk player &e%player%&a."
+
+notifications:
+  staff-notify:
+    enabled: true
+    message:
+      - "&8[&cPunish Staff&8] &c%staff% &fmenjalankan &6%type% &fkepada &e%player% &fkarena: &d%reason%"
+  warn:
+    - "&6&l=========================================="
+    - "             &6&l⚠ PERINGATAN DITERIMA ⚠"
+    - "&6&l=========================================="
+    - "&fAlasan : &e%reason%"
+    - "&fID Peringatan : &e%warn_id%"
+    - "&fDikeluarkan Oleh : &e%staff%"
+    - "&6&l=========================================="
+  mute:
+    - "&c&l=========================================="
+    - "             &c&lANDA DIBUNGKAM"
+    - "&c&l=========================================="
+    - "&fAlasan : &e%reason%"
+    - "&fDurasi : &e%duration%"
+    - "&fSisa Waktu : &e%remaining%"
+    - "&c&l=========================================="
+  freeze:
+    - "&b&l=========================================="
+    - "             &b&l❄ ANDA DIBEKUKAN ❄"
+    - "&b&l=========================================="
+    - "&fAlasan : &e%reason%"
+    - "&b&lJANGAN KELUAR GAME ATAU ANDA AKAN DIBAN!"
+    - "&b&l=========================================="
+  jail:
+    - "&e&l=========================================="
+    - "             &e&l🏛 ANDA DIPENJARA 🏛"
+    - "&e&l=========================================="
+    - "&fAlasan : &e%reason%"
+    - "&fSisa Waktu : &e%remaining%"
+    - "&e&l=========================================="

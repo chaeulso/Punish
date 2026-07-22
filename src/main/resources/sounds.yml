@@ -1,0 +1,29 @@
+# ==============================================================================
+#                 Punish Custom Punishment Sound Effects Configuration
+# ==============================================================================
+
+sounds:
+  ban:
+    type: "ENTITY_LIGHTNING_BOLT_THUNDER"
+    volume: 1.0
+    pitch: 1.0
+  kick:
+    type: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 1.0
+    pitch: 1.0
+  mute:
+    type: "BLOCK_NOTE_BLOCK_BASS"
+    volume: 1.0
+    pitch: 1.0
+  freeze:
+    type: "BLOCK_ANVIL_PLACE"
+    volume: 1.0
+    pitch: 1.0
+  jail:
+    type: "ENTITY_WITHER_SPAWN"
+    volume: 1.0
+    pitch: 1.0
+  warn:
+    type: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    volume: 1.0
+    pitch: 1.0

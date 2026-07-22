@@ -1,0 +1,195 @@
+# ==============================================================================
+#                 Punish Messages - English (EN)
+# ==============================================================================
+
+prefix: "&8[&cPunish&8]"
+
+no-permission: "%prefix% &cYou do not have permission to execute this command."
+player-not-found: "%prefix% &cPlayer &e%player% &cnot found or has never joined before."
+invalid-duration: "%prefix% &cInvalid duration format specified (e.g. 1d, 5h, perm)."
+self-punish-error: "%prefix% &cYou cannot execute this punishment on yourself!"
+staff-exempt-error: "%prefix% &cYou cannot punish &e%player% &cbecause they have a higher permission weight."
+only-player-error: "%prefix% &cThis action can only be executed by a player in-game."
+unknown-error: "%prefix% &cAn unexpected internal error occurred."
+
+commands:
+  ban:
+    usage: "%prefix% &cUsage: /ban <player> <reason> <duration>"
+    success: "%prefix% &aSuccessfully banned player &e%player% &afor: &f%reason% &a(&e%duration%&a)"
+  unban:
+    usage: "%prefix% &cUsage: /unban <player>"
+    success: "%prefix% &aSuccessfully unbanned player &e%player%&a."
+    not-banned: "%prefix% &cPlayer &e%player% &cis not currently banned!"
+  kick:
+    usage: "%prefix% &cUsage: /kick <player> <reason>"
+    success: "%prefix% &aSuccessfully kicked player &e%player% &afor: &f%reason%&a"
+  mute:
+    usage: "%prefix% &cUsage: /mute <player> <reason> <duration>"
+    success: "%prefix% &aSuccessfully muted player &e%player% &afor: &f%reason% &a(&e%duration%&a)"
+    chat-blocked: "&c&l✘ &cYou are currently muted on this server!\n&fReason: &e%reason%\n&fRemaining: &e%remaining%"
+  unmute:
+    usage: "%prefix% &cUsage: /unmute <player>"
+    success: "%prefix% &aSuccessfully unmuted player &e%player%&a."
+    not-muted: "%prefix% &cPlayer &e%player% &cis not currently muted!"
+  freeze:
+    usage: "%prefix% &cUsage: /freeze <player> <reason> <duration>"
+    success: "%prefix% &aSuccessfully frozen player &e%player% &afor: &f%reason% &a(&e%duration%&a)"
+    action-blocked: "&c&l✘ &cYou cannot do this while frozen!"
+  unfreeze:
+    usage: "%prefix% &cUsage: /unfreeze <player>"
+    success: "%prefix% &aSuccessfully unfrozen player &e%player%&a."
+    not-frozen: "%prefix% &cPlayer &e%player% &cis not currently frozen!"
+  jail:
+    usage: "%prefix% &cUsage: /jail <player> <reason> <duration>"
+    success: "%prefix% &aSuccessfully jailed player &e%player% &afor: &f%reason% &a(&e%duration%&a)"
+    spawn-not-set: "%prefix% &cThe jail spawn location has not been configured yet! Use /setjail."
+  unjail:
+    usage: "%prefix% &cUsage: /unjail <player>"
+    success: "%prefix% &aSuccessfully unjailed player &e%player%&a."
+    not-jailed: "%prefix% &cPlayer &e%player% &cis not currently jailed!"
+  warn:
+    usage: "%prefix% &cUsage: /warn <player> <reason>"
+    success: "%prefix% &aSuccessfully warned player &e%player% &afor: &f%reason%&a"
+  clearwarn:
+    usage: "%prefix% &cUsage: /clearwarn <player>"
+    success: "%prefix% &aSuccessfully cleared all warnings for player &e%player%&a."
+  delwarn:
+    usage: "%prefix% &cUsage: /delwarn <player> <warn-id>"
+    success: "%prefix% &aSuccessfully deleted warning &e%warn_id% &afor player &e%player%&a."
+    not-found: "%prefix% &cWarning ID &e%warn_id% &cnot found for player &e%player%&a."
+
+ban-screen:
+  - ""
+  - "&4&lYOU ARE BANNED"
+  - ""
+  - "&fPlayer : &c%player%"
+  - "&fReason : &c%reason%"
+  - "&fBanned By : &c%staff%"
+  - "&fDate : &7%issued%"
+  - "&fDuration : &4PERMANENT"
+  - ""
+  - "&7Think this was a mistake?"
+  - "&bdiscord.gg/example"
+  - ""
+
+temporary-ban-screen:
+  - ""
+  - "&6&lYOU ARE TEMPORARILY BANNED"
+  - ""
+  - "&fPlayer : &e%player%"
+  - "&fReason : &e%reason%"
+  - "&fBanned By : &e%staff%"
+  - "&fDate : &7%issued%"
+  - "&fRemaining : &e%remaining%"
+  - ""
+  - "&7Think this was a mistake?"
+  - "&bdiscord.gg/example"
+  - ""
+
+broadcast:
+  ban:
+    enabled: true
+    audience: "ALL"
+    message:
+      - ""
+      - "&4&lPLAYER BANNED"
+      - ""
+      - "&fPlayer : &c%player%"
+      - "&fReason : &f%reason%"
+      - "&fPunishment ID : &f%punishment_id%"
+      - "&fStaff : &f%staff%"
+      - "&fDuration : &f%duration%"
+      - ""
+  kick:
+    enabled: true
+    audience: "ALL"
+    message:
+      - ""
+      - "&6&lPLAYER KICKED"
+      - ""
+      - "&fPlayer : &c%player%"
+      - "&fReason : &f%reason%"
+      - "&fStaff : &f%staff%"
+      - ""
+  mute:
+    enabled: true
+    audience: "ALL"
+    message:
+      - ""
+      - "&e&lPLAYER MUTED"
+      - ""
+      - "&fPlayer : &c%player%"
+      - "&fReason : &f%reason%"
+      - "&fStaff : &f%staff%"
+      - "&fDuration : &f%duration%"
+      - ""
+  freeze:
+    enabled: true
+    audience: "ALL"
+    message:
+      - ""
+      - "&b&lPLAYER FROZEN"
+      - ""
+      - "&fPlayer : &c%player%"
+      - "&fReason : &f%reason%"
+      - "&fStaff : &f%staff%"
+      - ""
+  jail:
+    enabled: true
+    audience: "ALL"
+    message:
+      - ""
+      - "&8&lPLAYER JAILED"
+      - ""
+      - "&fPlayer : &c%player%"
+      - "&fReason : &f%reason%"
+      - "&fStaff : &f%staff%"
+      - "&fDuration : &f%duration%"
+      - ""
+  warn:
+    enabled: true
+    audience: "ALL"
+    message:
+      - ""
+      - "&e&lPLAYER WARNED"
+      - ""
+      - "&fPlayer : &c%player%"
+      - "&fReason : &f%reason%"
+      - "&fStaff : &f%staff%"
+      - ""
+
+notifications:
+  staff-notify:
+    enabled: true
+    message:
+      - "&8[&cPunish Staff&8] &c%staff% &fexecuted &6%type% &fa &e%player% &fpor: &d%reason%"
+  warn:
+    - "&6&l=========================================="
+    - "             &6&l⚠ WARNING RECEIVED ⚠"
+    - "&6&l=========================================="
+    - "&fReason : &e%reason%"
+    - "&fWarn ID : &e%warn_id%"
+    - "&fIssued By : &e%staff%"
+    - "&6&l=========================================="
+  mute:
+    - "&c&l=========================================="
+    - "             &c&lMUTED CONTEXT"
+    - "&c&l=========================================="
+    - "&fReason : &e%reason%"
+    - "&fDuration : &e%duration%"
+    - "&fRemaining : &e%remaining%"
+    - "&c&l=========================================="
+  freeze:
+    - "&b&l=========================================="
+    - "             &b&l❄ YOU ARE FROZEN ❄"
+    - "&b&l=========================================="
+    - "&fReason : &e%reason%"
+    - "&b&lDO NOT LOGOUT OR YOU WILL BE BANNED!"
+    - "&b&l=========================================="
+  jail:
+    - "&e&l=========================================="
+    - "             &e&l🏛 YOU ARE JAILED 🏛"
+    - "&e&l=========================================="
+    - "&fReason : &e%reason%"
+    - "&fRemaining : &e%remaining%"
+    - "&e&l=========================================="

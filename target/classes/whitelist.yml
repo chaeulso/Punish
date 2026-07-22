@@ -1,0 +1,12 @@
+# ==============================================================================
+#                 Punish Allowed Commands Configuration (Whitelist)
+# ==============================================================================
+
+# Commands allowed even when players are frozen or jailed
+allowed-commands:
+  freeze:
+    - "helpop"
+    - "report"
+  jail:
+    - "helpop"
+    - "report"
