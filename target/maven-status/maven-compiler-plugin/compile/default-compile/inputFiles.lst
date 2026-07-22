@@ -8,6 +8,8 @@
 /home/user/Punish/src/main/java/com/chaeulso/punish/model/Punishment.java
 /home/user/Punish/src/main/java/com/chaeulso/punish/punishment/PunishmentManager.java
 /home/user/Punish/src/main/java/com/chaeulso/punish/punishment/TemplateManager.java
+/home/user/Punish/src/main/java/com/chaeulso/punish/util/AuthPlusUI.java
 /home/user/Punish/src/main/java/com/chaeulso/punish/util/AuthScheduler.java
+/home/user/Punish/src/main/java/com/chaeulso/punish/util/BedrockFormUI.java
 /home/user/Punish/src/main/java/com/chaeulso/punish/util/ProxyConfigLoader.java
 /home/user/Punish/src/main/java/com/chaeulso/punish/velocity/VelocityPunish.java
